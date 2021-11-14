@@ -12,8 +12,8 @@
     // The log directory stores info, warning, and errors.
     // If the daemon uses the 'filesystem' logging retriever then the log_dir
     // will also contain the query results.
-    //"logger_path": "/var/log/osquery",
-
+    
+    "logger_path": "{{ win_osquery_logger_path }}",   
     // Set 'disable_logging' to true to prevent writing any info, warning, error
     // logs. If a logging plugin is selected it will still write query results.
     //"disable_logging": "false",
@@ -36,14 +36,14 @@
 
     // A filesystem path for disk-based backing storage used for events and
     // query results differentials. See also 'use_in_memory_database'.
-    //"database_path": "/var/osquery/osquery.db",
+    "database_path": "{{ win_osquery_database_path }}",
 
     // Comma-delimited list of table names to be disabled.
     // This allows osquery to be launched without certain tables.
     //"disable_tables": "foo_bar,time",
 
     // Enable debug or verbose debug output when logging.
-    "verbose": "false",
+    "verbose": "true",
 
     // The number of threads for concurrent query schedule execution.
     "worker_threads": "2",
